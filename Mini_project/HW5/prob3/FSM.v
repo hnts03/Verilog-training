@@ -7,7 +7,7 @@ reg [6:1] state;
 reg ST;
 
 parameter highwaygreen   = 6'b001100;
-parameter highwayyellow  = 6'b010110;
+parameter highwayyellow  = 6'b010100;
 parameter farmroadgreen  = 6'b100001;
 parameter farmroadyellow = 6'b100010;
 

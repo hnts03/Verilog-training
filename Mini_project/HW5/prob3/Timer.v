@@ -1,6 +1,6 @@
 module Timer(TS, TL, ST, Emergency, Clk);
 
-input ST, Clk Emergency;
+input ST, Clk, Emergency;
 output TS, TL;
 
 integer value;

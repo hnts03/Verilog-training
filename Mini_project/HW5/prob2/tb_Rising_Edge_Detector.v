@@ -2,8 +2,10 @@
 
 module tb_Rising_Edge_Detector;
 
+parameter CLK_CYCLE=2;
+
 reg in_sig;
-reg out_sig;
+wire out_sig;
 reg clk;
 reg rstn;
 
@@ -18,14 +20,15 @@ initial begin
 	rstn = 1'b0;
 	in_sig = 1'b0;
 
-
-	#(10) rstn   = 1'b1;
-	#(10) in_sig = 1'b1;
-	#(10) in_sig = 1'b0;
-	#(15) in_sig = 1'b1;
-	#( 5) in_sig = 1'b0;
-	#(30) in_sig = 1'b1;
-	#(10) $finish
+	#(4 * CLK_CYCLE) rstn   = 1'b1;
+	#(5 * CLK_CYCLE) in_sig = 1'b1;
+	#(5 * CLK_CYCLE) in_sig = 1'b0;
+	#(5 * CLK_CYCLE) in_sig = 1'b1;
+	#(5 * CLK_CYCLE) in_sig = 1'b0;
+	#(5 * CLK_CYCLE) in_sig = 1'b1;
+	#(5 * CLK_CYCLE) in_sig = 1'b0;
+	#(5 * CLK_CYCLE) in_sig = 1'b1;
+	#(5 * CLK_CYCLE) in_sig = 1'b0;
 end
 
 initial begin
